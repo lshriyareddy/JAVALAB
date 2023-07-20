@@ -1,0 +1,41 @@
+import java.util.*;
+public class employeeid {
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter valid employye id");
+    int id=sc.nextInt();
+    int [] EmpId={1001,1002,1003,1004};
+    String[]EmpName={"Abc","Opqr","Ghi","Wxyz"};
+    String[]JoinDate={"01/04/2009","23/08/2012","12/11/2008","29/01/2013"};
+    char[]DesigCode={'e','c','k','r','m','e','c'};
+    String[]Department={"R&D","PM","Acct","FrontDesk","Engg","Manufacturing","PM"};
+    double[] Basic={20000,30000,10000,5000};
+    double[]HRA={8000,12000,8000,6000};
+    double[] IT={3000,9000,1000,2000};
+    char[] DesignationCode={'e','c','k','r','m'};
+    String[] Designation={"Engineer","Consultant","Clerk","Receptionist","Manager"};
+    double[] DA={20000,32000,12000,15000,40000};
+    int flag=0;
+    for(int i=0;i<EmpId.length;i++)
+    {
+        if(EmpId[i]==id)
+        {
+            flag=1;
+            System.out.println("Emp Id.	 Emp Name	Department	Designation	   DA    DOJ");
+            System.out.print(EmpId[i]+" 	  "+EmpName[i]+" 		"+Department[i]);
+            for(int j=0;j<DesignationCode.length;j++)
+            {
+                if(DesigCode[i]==DesignationCode[j])
+                {	System.out.print(" 		"+Designation[j]+" 	");
+                    double sum=Basic[i]+HRA[i]+DA[j]-IT[i];
+                    System.out.print(sum);
+                }
+            }	
+            System.out.print(" "+JoinDate[i]);
+        }	
+    }
+    if(flag==0)
+        System.out.println("There is no employee with EmpId : " +id);
+}
+}
+    
